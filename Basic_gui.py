@@ -4,7 +4,6 @@ import time
 import pandas as pd
 import datetime
 import os
-import regex
 topics = ['Success','Work','Education','Hobbies', 'Family', 'Travel','Food' ,'Pets','Movies','Music','Future Goals/Dreams']
 
 past = pd.DataFrame()
