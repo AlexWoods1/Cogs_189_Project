@@ -1,7 +1,8 @@
 lsl_out = False
 save_dir = f'data/misc/' # Directory to save data to
-run = 1 # Run number, it is used as the random seed for the trial sequence generation
+run = 3 # Run number, it is used as the random seed for the trial sequence generation
 save_file_aux = save_dir + f'aux_run-{run}.npy'
+save_file_eeg = save_dir + f'eeg_run-{run}.npy'
 
 import glob, sys, time, serial, os
 from brainflow.board_shim import BoardShim, BrainFlowInputParams
@@ -101,3 +102,4 @@ while not stop_event.is_set():
 
 os.makedirs(save_dir, exist_ok=True)
 np.save(save_file_aux, aux)
+np.save(save_file_eeg, eeg)
