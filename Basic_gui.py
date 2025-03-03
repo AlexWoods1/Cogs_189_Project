@@ -12,6 +12,7 @@ def update_trial_info(event=None):
     global past
     truth_value = random.choice(["fact","lie"])
     topic = random.choice(topics)
+    time.sleep(3)
     label.config(text=f"Please tell A {truth_value} about {topic}.")
     current =pd.DataFrame(  {'time':time.time(), 'topic':topic, 'truth_value':truth_value}, index=[0])
     past = pd.concat([past,current])
