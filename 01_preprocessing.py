@@ -3,7 +3,7 @@ Step 1.
 Pre-process raw data.
 
 Usage:
-    01_preprocessing.py --eeg=FILE --photo=FILE --out=FILE
+    01_preprocessing.py --eeg=FILE --photo=FILE --out=PATH
 
 Options:
     -h --help     Show this screen and terminate script.
@@ -30,7 +30,7 @@ def main():
     sampling_rate = 250 #Hz
     session = int(eeg_path.rstrip(".npy")[-1])
 
-    # load the data
+    # load data
     raw_eeg = np.load(eeg_path)
     aux = np.load(photo_path)
 
@@ -66,13 +66,16 @@ def main():
         ax.set_xlabel("Time (s)")
         ax.set_ylabel(u"Microvolts (\u00b5"+"m)")
         plt.title(f"Session {session} EEG Signal")
-        fig.savefig(f"eeg_session{session}_channel{channel}.png")
+        fig.savefig(f"figs/eeg_session{session}_channel{channel}.png")
 
         # save pre-processed eeg channel array
         all_channels[f'channel {channel}'] = eeg
    
+    # save behavior labels
+    np.save(fname_out + f"/behavior/behavior_{session}.npy", behavioral_state)
+
    # save the data to npz
-    np.savez(fname_out + "eeg.npz", chan1=all_channels['channel 1'], chan2=all_channels['channel 2'], chan3=all_channels['channel 3'], chan4=all_channels['channel 4'], 
+    np.savez(fname_out + f"/eeg/eeg_{session}.npz", chan1=all_channels['channel 1'], chan2=all_channels['channel 2'], chan3=all_channels['channel 3'], chan4=all_channels['channel 4'], 
                     chan5=all_channels['channel 5'], chan6=all_channels['channel 6'], chan7=all_channels['channel 7'], chan8=all_channels['channel 8'])
 
 if __name__ == "__main__":
