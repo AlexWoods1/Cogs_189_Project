@@ -19,7 +19,7 @@ def update_trial_info(event=None):
 
 def end_trial(event=None):
     global past
-    past.to_csv(f"trial_{datetime.date.today()}.csv")
+    past.to_csv(f"trial_{datetime.date.today()}_{time.time()}.csv")
     quit()
 
 # Create the main window

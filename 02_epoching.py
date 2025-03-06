@@ -18,7 +18,7 @@ from docopt import docopt
 import numpy as np
 
 def main():
-     # get arguments
+    # get arguments
     vargs = docopt(__doc__)
     session_path = vargs['--sess']
     behavior_path = vargs['--beh']
