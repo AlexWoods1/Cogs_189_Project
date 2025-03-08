@@ -4,18 +4,23 @@ import time
 import pandas as pd
 import datetime
 import os
-topics = ['Success','Work','Education','Hobbies', 'Family', 'Travel','Food' ,'Pets','Movies','Music','Future Goals/Dreams']
+topics = ['Animals','Fungi/Plants','Cognitive Science','Planets and the universe', 'Things you learn in class','Colors','Clothes','Math', 'Your job', 'Research', 'Dinosaurs']
 
 past = pd.DataFrame()
 
+trial=0
+
 def update_trial_info(event=None):
-    global past
+    global past, trial
     truth_value = random.choice(["fact","lie"])
     topic = random.choice(topics)
     time.sleep(3)
     label.config(text=f"Please tell A {truth_value} about {topic}.")
     current =pd.DataFrame(  {'time':time.time(), 'topic':topic, 'truth_value':truth_value}, index=[0])
     past = pd.concat([past,current])
+    trial +=1
+    if trial == 15:
+        end_trial()
 
 def end_trial(event=None):
     global past

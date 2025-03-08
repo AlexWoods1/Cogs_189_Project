@@ -1,0 +1,16 @@
+,time,topic,truth_value
+0,1741470179.9318779,Animals,lie
+0,1741470191.1207511,Clothes,fact
+0,1741470205.7049963,Dinosaurs,lie
+0,1741470216.9958758,Research,lie
+0,1741470231.6260686,UCSD environment,lie
+0,1741470254.686158,Animals,fact
+0,1741470269.424118,Dinosaurs,lie
+0,1741470281.4847414,Animals,lie
+0,1741470300.5066245,Dinosaurs,fact
+0,1741470313.0550313,Things you learn in class,fact
+0,1741470326.6442587,Funghi/Plants,fact
+0,1741470338.5688596,Your job,lie
+0,1741470352.2830646,Funghi/Plants,lie
+0,1741470365.4249263,Dinosaurs,lie
+0,1741470378.7989504,Funghi/Plants,fact
