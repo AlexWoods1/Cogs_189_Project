@@ -1,6 +1,6 @@
 lsl_out = False
 save_dir = f'data/misc/' # Directory to save data to
-run = 3 # Run number, it is used as the random seed for the trial sequence generation
+run = 99 # Run number, it is used as the random seed for the trial sequence generation
 save_file_aux = save_dir + f'aux_run-{run}.npy'
 save_file_eeg = save_dir + f'eeg_run-{run}.npy'
 
